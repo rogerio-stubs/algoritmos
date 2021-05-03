@@ -1,12 +1,24 @@
-from lista_encadeada import *
+from linkedList import *
 
 if __name__ == '__main__':
-    lista = ListaEncadeada()
-    lista.inserir_no_inicio(5)
+    lista = LinkedList()
+    lista.insert(0, 12)
+    
+    lista.append(40)
+    
+    lista.insert(2, 3)
+    
+    lista.insert(1, True)
+
     print(lista)
 
-    lista.inserir_depois(lista.cabeca, 4)
+    lista.remove(None)
+
     print(lista)
 
-    lista.inserir_depois(lista.cabeca, 3)
-    print(lista)
+    
+
+    
+    
+
+
