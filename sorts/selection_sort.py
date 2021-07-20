@@ -3,10 +3,10 @@
 - Percorre o vetor, buscando o menor elemento.
 - Altere a posição dos elementos.
 
-- Não precisa de um vetor auxíliar (in-place), por isso ocupa menos memória
-- Veloz para vetores de tamanho pequeno, mas lento para vetores grandes
-- Ele não estável
-- Complexidade: O(n^2)
+- Não precisa de um vetor auxíliar (in-place), por isso ocupa menos memória.
+- Veloz para vetores de tamanho pequeno, mas lento para vetores grandes.
+- Ele não estável.
+- Complexidade: O(n²).
 """
 
 def selection_sort(collection):

@@ -1,5 +1,12 @@
-"""
+""" 
+- pego um valor e verifico com o anterior, se o atual for menor altero as posições
+- realizo esse procedimento até o valor anterior for menor que o atual
 
+- É de simples implementação, leitura e manutenção.
+- In-place: Apenas requer uma quantidade constante de O(1) espaço de memória adicional.
+- Estável: Não muda a ordem relativa de elementos com valores iguais.
+- Útil para pequenas entradas, muitas trocas, e menos comparações.
+- Complexidade: O(n²).
 """
 
 def insertion_sort(collection):
