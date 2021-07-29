@@ -18,4 +18,8 @@ def bubble_sort(collection):
             if collection[i] > collection[i+1]:
                 collection[i], collection[i+1] = collection[i+1], collection[i]
                 ordenado = False
+
+if __name__ == '__main__':
+    collection = [7, -1, 4, -7, 2, 3, -9, 5, 1, 8]
+    bubble_sort(collection)
     print(collection)

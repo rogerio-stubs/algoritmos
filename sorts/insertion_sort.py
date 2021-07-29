@@ -21,4 +21,8 @@ def insertion_sort(collection):
 
         collection[i + 1] = key
 
+
+if __name__ == '__main__':
+    collection = [7, -1, 4, -7, 2, 3, -9, 5, 1, 8]
+    insertion_sort(collection)
     print(collection)

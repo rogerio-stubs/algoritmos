@@ -20,4 +20,8 @@ def selection_sort(collection):
             
         collection[i], collection[minimum] = collection[minimum], collection[i]
 
+
+if __name__ == '__main__':
+    collection = [7, -1, 4, -7, 2, 3, -9, 5, 1, 8]
+    selection_sort(collection)
     print(collection)
