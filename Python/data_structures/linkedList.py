@@ -1,3 +1,4 @@
+import unittest
 class Node:
     
     def __init__(self, data):
@@ -94,5 +95,50 @@ class LinkedList:
                 pointer = pointer.next
             self._size -= 1
             return True
-        raise ValueError('{} is not in list'.format(elem))
+        raise ValueError('{} is not in list teta'.format(elem))
         
+class LinkedListTests(unittest.TestCase): 
+    def setUp(self) -> None:
+        self.linkedList = LinkedList()
+
+    def test_size(self):
+        self.assertEqual(0, self.linkedList.__len__())
+        self.linkedList.append(1)
+        self.assertEqual(1, self.linkedList.__len__())
+        self.linkedList.insert(1, 1)
+        self.assertEqual(2, self.linkedList.__len__())
+        self.linkedList.remove(2)
+        self.assertEqual(1, self.linkedList.__len__())
+
+    def test_append(self): 
+        self.linkedList.append(1)
+        self.assertEqual('[1 -> None]', self.linkedList.__str__())
+        self.linkedList.append(2)
+        self.assertEqual('[1 -> 2 -> None]', self.linkedList.__str__())
+
+    def test_index(self):
+        self.assertRaises(ValueError, self.linkedList.index, 2)
+        self.linkedList.append(1)
+        self.linkedList.append(2)
+        self.assertEqual(0, self.linkedList.index(1))
+        self.assertEqual(1, self.linkedList.index(2))
+
+    def test_insert(self):
+        self.linkedList.insert(0, 1)
+        self.assertEqual(0, self.linkedList.index(1))
+        self.linkedList.insert(0, 2)
+        self.assertEqual(0, self.linkedList.index(2))
+
+    def test_remove(self):
+        self.assertRaises(ValueError, self.linkedList.remove, 1)
+        self.linkedList.append(1)
+        self.linkedList.append(2)
+        self.assertEqual(2, self.linkedList.__len__())
+        self.linkedList.remove(1)
+        self.assertEqual(1, self.linkedList.__len__())
+
+
+
+
+if __name__ == '__main__':
+    unittest.main()
