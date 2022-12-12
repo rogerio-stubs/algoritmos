@@ -1,3 +1,4 @@
+import unittest
 class Node:
     
     def __init__(self, data):
@@ -48,3 +49,30 @@ class Stack:
             return self.top.data
         else:
             raise IndexError('The stack is empty!')
+
+
+class StackTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.stack = Stack()
+
+    def test_push(self):
+        self.stack.push(1)
+        self.assertEqual(1, self.stack.__len__())
+        self.stack.push(2)
+        self.assertEqual(2, self.stack.__len__())
+
+
+    def test_pop(self):
+        self.assertRaises(IndexError, self.stack.pop)
+        self.stack.push(1)
+        self.stack.push(2)
+        self.assertEqual(2, self.stack.pop())
+        self.assertEqual(1, self.stack.pop())
+
+    def test_peek(self):
+        self.assertRaises(IndexError, self.stack.peek)
+        self.stack.push(1)
+        self.assertEqual(1, self.stack.peek())
+
+if __name__ == '__main__':
+    unittest.main()
